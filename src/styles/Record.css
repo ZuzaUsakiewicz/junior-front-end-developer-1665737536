@@ -1,0 +1,61 @@
+.record-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: transparent;
+  border-radius: 8px;
+  width: 304px;
+  height: 104px;
+  font-size: 0.6rem;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.record-container.active {
+  background: #ffffff;
+  box-shadow: 0px 8px 16px rgba(84, 84, 84, 0.2);
+}
+.record-container.new-task {
+  background: #ffffff;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+}
+.record-container.new-task.active {
+  box-shadow: 0px 8px 16px rgba(84, 84, 84, 0.2);
+}
+.record-info {
+  font-size: 0.625rem;
+  color: #6b778c;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.dot {
+  font-size: 1rem;
+  padding: 0;
+  transform: translateY(-2px);
+}
+
+.new {
+  text-transform: uppercase;
+  color: #fff;
+  background: #0165ff;
+  padding: 3px 7px;
+  border-radius: 4px;
+  line-height: 0.875rem;
+}
+
+.record-title {
+  font-size: 0.75rem;
+  padding: 0.3rem 0;
+}
+
+.record-title.new-message {
+  color: #0165ff;
+  font-weight: 700;
+}
+
+.record-message {
+  color: #6b778c;
+  font-weight: 500;
+}
