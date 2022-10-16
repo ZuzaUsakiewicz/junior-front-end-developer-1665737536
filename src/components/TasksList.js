@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LockIcon from "../assets/lockIcon.svg";
 import CheckMarkIcon from "../assets/checkMarkIcon.svg";
 import ArrowRightIcon from "../assets/arrowRightIcon.svg";
-import "../styles/TaskListStyles.css";
+import "../styles/TasksListStyles.css";
 
 const TasksList = () => {
   const [listOfTasks] = useState([
@@ -39,27 +39,35 @@ const TasksList = () => {
   ]);
 
   return (
-    <div className="tasks-list-container">
-      {listOfTasks.map((task, index) => {
-        return (
-          <a href="/" key={index} className={`task-container ${task.status}`}>
-            <div className={`icon-wrapper ${task.status}`}>
-              {task.status === "completed" ? (
-                <img src={CheckMarkIcon} alt="check mark icon task done" />
-              ) : task.status === "blocked" ? (
-                <img src={LockIcon} alt="lock icon unavailable blocked task" />
-              ) : (
-                <img
-                  src={ArrowRightIcon}
-                  alt="arrow right icon current active task"
-                />
-              )}
-            </div>
-            <span className={`task-title ${task.status}`}>{task.title}</span>
-          </a>
-        );
-      })}
-    </div>
+    <section className="section-container left-tab">
+      <div className="section-title left-title">
+        <span>your tasks</span>
+      </div>
+      <div className="tasks-list-container">
+        {listOfTasks.map((task, index) => {
+          return (
+            <a href="/" key={index} className={`task-container ${task.status}`}>
+              <div className={`icon-wrapper ${task.status}`}>
+                {task.status === "completed" ? (
+                  <img src={CheckMarkIcon} alt="check mark icon task done" />
+                ) : task.status === "blocked" ? (
+                  <img
+                    src={LockIcon}
+                    alt="lock icon unavailable blocked task"
+                  />
+                ) : (
+                  <img
+                    src={ArrowRightIcon}
+                    alt="arrow right icon current active task"
+                  />
+                )}
+              </div>
+              <span className={`task-title ${task.status}`}>{task.title}</span>
+            </a>
+          );
+        })}
+      </div>
+    </section>
   );
 };
 
